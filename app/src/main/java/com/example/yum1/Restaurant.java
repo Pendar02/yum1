@@ -1,5 +1,6 @@
 package com.example.yum1;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -11,23 +12,23 @@ public class Restaurant {
     private String photo;
     private String location;
     private double rating;
-    private String cuisines;
-    private List<List<Object>> reviews; // [name,rating,review]
+    private String cuisine;
+    private ArrayList<String> reviews; // name,rating,review
     private Map<String, Double> menu;
-    private List<Object> operationtime;
+    private ArrayList<Object> operationtime;
 
     //constructor empty
     public Restaurant() {
     }
 
-    public Restaurant(String id, String name, String address, String photo, String location, double rating, String cuisines, List<List<Object>> reviews, Map<String, Double> menu, List<Object> operationtime) {
+    public Restaurant(String id, String name, String address, String photo, String location, double rating, String cuisine, ArrayList<String> reviews, Map<String, Double> menu, ArrayList<Object> operationtime) {
         this.id = id;
         this.name = name;
         this.address = address;
         this.photo = photo;
         this.location = location;
         this.rating = rating;
-        this.cuisines = cuisines;
+        this.cuisine = cuisine;
         this.reviews = reviews;
         this.menu = menu;
         this.operationtime = operationtime;
@@ -81,19 +82,22 @@ public class Restaurant {
         this.rating = rating;
     }
 
-    public String getCuisines() {
-        return cuisines;
+    public String getCuisine() {
+        return cuisine;
     }
 
-    public void setCuisines(String cuisines) {
-        this.cuisines = cuisines;
+    public void setCuisine(String cuisine) {
+        this.cuisine = cuisine;
     }
 
-    public List<List<Object>> getReviews() {
+    public ArrayList<String> getReviews() {
+
+        //String _name = this.reviews.get(0).split(",")[0];
+        //double _r =Double.valueOf( this.reviews.get(0).split(",")[1]);
         return reviews;
     }
 
-    public void setReviews(List<List<Object>> reviews) {
+    public void setReviews(ArrayList<String> reviews) {
         this.reviews = reviews;
     }
 
@@ -105,12 +109,11 @@ public class Restaurant {
         this.menu = menu;
     }
 
-    public List<Object> getOperationtime() {
+    public ArrayList<Object> getOperationtime() {
         return operationtime;
     }
 
-    public void setOperationtime(List<Object> operationtime) {
+    public void setOperationtime(ArrayList<Object> operationtime) {
         this.operationtime = operationtime;
     }
 }
-

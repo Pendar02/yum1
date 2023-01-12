@@ -1,5 +1,6 @@
 package com.example.yum1;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class User {
@@ -8,14 +9,14 @@ public class User {
     private String name;
     private String email;
     private String address;
-    private List<String> faves;
-    private List<String> recents;
+    private ArrayList<String> faves;
+    private ArrayList<String> recents;
 
     //constructor empty
     public User() {
     }
     //constructor
-    public User(String uid, String name, String email, String address, List<String> faves, List<String> recents) {
+    public User(String uid, String name, String email, String address, ArrayList<String> faves, ArrayList<String> recents) {
         this.uid = uid;
         this.name = name;
         this.email = email;
@@ -58,19 +59,19 @@ public class User {
         this.address = address;
     }
 
-    public List<String> getFaves() {
+    public ArrayList<String> getFaves() {
         return faves;
     }
 
-    public void setFaves(List<String> faves) {
+    public void setFaves(ArrayList<String> faves) {
         this.faves = faves;
     }
 
-    public List<String> getRecents() {
+    public ArrayList<String> getRecents() {
         return recents;
     }
 
-    public void setRecents(List<String> recents) {
+    public void setRecents(ArrayList<String> recents) {
         this.recents = recents;
     }
 }

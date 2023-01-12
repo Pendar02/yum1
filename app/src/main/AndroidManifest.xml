@@ -13,6 +13,20 @@
         android:theme="@style/Theme.Yum1"
         tools:targetApi="33">
         <activity
+            android:name=".Choices"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".DirectoryLocation"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".EditProfile"
             android:exported="false">
             <meta-data
@@ -35,13 +49,6 @@
         </activity>
         <activity
             android:name=".ForgotPassword"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".popular"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

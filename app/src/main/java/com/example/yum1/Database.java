@@ -89,9 +89,9 @@ public class Database {
     }
 
     //Update Restaurant - Reviews
-    public void updateRestaurant (String id, List data)
+    public void updateRestaurant (String id, String data)
     {
         DocumentReference washingtonRef = db.collection("restaurants").document(id);
-        washingtonRef.update("reviws", FieldValue.arrayUnion(data));
+        washingtonRef.update("reviews", FieldValue.arrayUnion(data));
     }
 }
