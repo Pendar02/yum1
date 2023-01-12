@@ -27,7 +27,7 @@ import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
 
-public class Dashboard extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class Dashboard extends AppCompatActivity {
 
     //variables
     private ImageButton nearMeBtn, directoryBtn,updatesBtn;
@@ -49,27 +49,8 @@ public class Dashboard extends AppCompatActivity implements NavigationView.OnNav
 
 
         //Toolbar & Drawer
-        mainDrawer = findViewById(R.id.main_drawer);
-        toolbar = findViewById(R.id.toolbar);
-        mainNavView = findViewById(R.id.main_nav_view);
-        mainNavHeader = mainNavView.getHeaderView(0);
-        startAnimation();
 
-        setSupportActionBar(toolbar);
-        mainNavView.bringToFront();
-        mainNavView.setCheckedItem(R.id.location_op);
 
-        mainNavView.setNavigationItemSelectedListener(this);
-    }
-
-        public void onBackPressed(){
-            Toast.makeText(getApplicationContext(), " Press Back again to Exit ", Toast.LENGTH_SHORT).show();
-            if (mainDrawer.isDrawerOpen(GravityCompat.START)){
-                Toast.makeText(getApplicationContext(), " Press Back again to Exit ", Toast.LENGTH_SHORT).show();
-                mainDrawer.closeDrawer(GravityCompat.START);
-            } else {
-                super.onBackPressed();
-            }
 
 
 
@@ -128,24 +109,8 @@ public class Dashboard extends AppCompatActivity implements NavigationView.OnNav
             }
         });
 
-    }
 
-    private void startAnimation() {
-        AnimationDrawable mainNavAnimation = (AnimationDrawable) mainNavHeader.getBackground();
-        mainNavAnimation.setEnterFadeDuration(1000);
-        mainNavAnimation.setExitFadeDuration(3000);
-        mainNavAnimation.start();
-    }
 
-    @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()){
-            case R.id.cuisine_op:
-                Intent anIntent = new Intent(getApplicationContext(), Dashboard.class);
-                startActivity(anIntent);
-                mainDrawer.closeDrawers();
-                break;
-        }
-        return true;
+
     }
 }
